@@ -77,16 +77,19 @@ float max31855_read_thermocouple_temp(max31855_device_t dev)
             if (raw & MAX31855_FAULT_OPEN)
             {
                 LOG_I("Open Circuit");
+                rt_mutex_release(dev->lock);
                 return -500;
             }
             if (raw & MAX31855_FAULT_SHORT_GND)
             {
                 LOG_I("Short to GND");
+                rt_mutex_release(dev->lock);
                 return -600;
             }
             if (raw & MAX31855_FAULT_SHORT_VCC)
             {
                 LOG_I("Short to VCC");
+                rt_mutex_release(dev->lock);
                 return -700;
             }
 
