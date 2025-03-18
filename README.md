@@ -53,6 +53,7 @@ int rt_hw_max31855_init(const char *name, struct rt_sensor_config *cfg)；
 
 - 设备配置和初始化（根据传入的配置信息配置接口设备）；
 - 注册相应的传感器设备，完成 max31855 设备的注册；
+- 使用`rt_device_read`函数读取传感器数据。
 
 #### 初始化示例
 
@@ -145,4 +146,4 @@ int main(void)
 维护人:
 
 - 维护：[wangwang105](https://github.com/wangwang105)
-- 主页：https://github.com/wangwang105/max31855
+- 主页：https://github.com/wangwang105/rtt-max31855
